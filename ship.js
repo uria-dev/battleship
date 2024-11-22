@@ -3,7 +3,7 @@ class Ship {
     this.len = len;
     this.hits = 0;
   }
-  build() {}
+  // build() {}
   hit(target) {}
   isSunk() {
     if (this.len == this.hits) {
