@@ -4,7 +4,8 @@
   "description": "A battleship project for The Odin Project",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
