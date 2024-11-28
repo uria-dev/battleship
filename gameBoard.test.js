@@ -10,3 +10,9 @@ test("Cannot exceed board limt", () => {
     gb.placeShip([0, 8], new Ship(5, "v"));
   }).toThrow(`Cannot exceed board limits`);
 });
+
+test("cannot target negative coordinates", () => {
+  expect(() => {
+    gb.receiveAttack([-2, 0]);
+  }).toThrow(`cannot target negative coordinates`);
+});

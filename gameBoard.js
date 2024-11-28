@@ -26,12 +26,14 @@ class gameBoard {
       throw "Cannot exceed board limits";
     }
   }
-  receiveAttack(x, y) {
+  receiveAttack([x, y]) {
+    if (x < 0 || y < 0) {
+      throw `cannot target negative coordinates`;
+    }
     if (this.board[x][y].hasShip == false) {
       return false;
     }
   }
 }
-const gb = new gameBoard();
 
 module.exports = gameBoard;
