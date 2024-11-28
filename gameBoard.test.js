@@ -16,3 +16,19 @@ test("cannot target negative coordinates", () => {
     gb.receiveAttack([-2, 0]);
   }).toThrow(`cannot target negative coordinates`);
 });
+
+test("ship is placed on board exists only in one spot", () => {
+  gb.placeShip([0, 0], new Ship(3, "h"));
+  expect(gb.board[0][0].ship).not.toBeUndefined();
+  expect(gb.board[0][9].ship).toBeNull();
+
+  gb.placeShip([0, 5], new Ship(3, "v"));
+  expect(gb.board[0][5].ship).not.toBeNull();
+  expect(gb.board[1][5].ship).not.toBeNull();
+  expect(gb.board[2][5].ship).not.toBeNull();
+  expect(gb.board[9][5].ship).toBeNull();
+
+  expect(() => {
+    gb.placeShip([0, 0], new Ship(1));
+  }).toThrow(`Ships cannot overlap`);
+});
