@@ -26,7 +26,7 @@ class gameBoard {
 
     this.board = arr;
   }
-  placeShip([x, y], ship) {
+  placeShip([x, y], ship = Ship) {
     if (ship.orientation == "v" && y + ship.len > 10) {
       throw "Cannot exceed board limits";
     }
