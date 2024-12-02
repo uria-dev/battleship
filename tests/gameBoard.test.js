@@ -1,5 +1,5 @@
-const gameBoard = require(`./gameBoard`);
-const Ship = require(`./ship`);
+const gameBoard = require(`../src/gameBoard`);
+const Ship = require(`../src/ship`);
 let gb = new gameBoard();
 
 test("Cannot exceed board limt", () => {

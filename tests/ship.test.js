@@ -1,4 +1,4 @@
-const Ship = require("./ship");
+const Ship = require("../src/ship");
 const testShip = new Ship(5);
 testShip.hits = 3;
 
