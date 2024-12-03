@@ -6,3 +6,4 @@ class Player {
     this.board = new Board();
   }
 }
+export default Player
