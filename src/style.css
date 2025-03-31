@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0077b6;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.player-board {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 30px);
+  gap: 2px;
+  margin: 1rem auto;
+  border: #333 solid 2px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+grid div {
+  width: 30px;
+  height: 30px;
+  background-color: #caf0f8;
+  border: 1px solid #023e8a; /* Ensure the border is visible */
+  box-sizing: border-box; /* Include the border in the element's dimensions */
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.grid div:hover {
+  background-color: #00b4d8; /* Change background color on hover */
+  border-color: #0077b6; /* Change border color on hover */
+}
+
+.grid div.hit {
+  background-color: #ff6b6b;
+}
+
+.grid div.miss {
+  background-color: #adb5bd;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  background-color: #0077b6;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #023e8a;
+}
