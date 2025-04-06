@@ -4,8 +4,8 @@ class Ship {
     this.hits = 0;
     this.sunk = false;
     this.orientation = orientation;
-    if (this.orientation !== "y" && this.orientation !== "x") {
-      this.orientation = "x";
+    if (this.orientation !== "v" && this.orientation !== "h") {
+      this.orientation = "h";
     }
   }
   hit() {
