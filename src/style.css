@@ -67,17 +67,8 @@ grid div {
   cursor: initial;
 }
 
-.grid div:hover {
-  background-color: white; /* Change background color on hover */
-  border-color: #0077b6; /* Change border color on hover */
-}
-
-.grid div.hit {
-  background-color: #ff6b6b;
-}
-
-.grid div.miss {
-  background-color: #adb5bd;
+.cell:hover {
+  background-color: white;
 }
 
 .controls {
