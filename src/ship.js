@@ -1,5 +1,6 @@
 class Ship {
-  constructor(len = Number, orientation) {
+  constructor(len = Number, name = String, orientation) {
+    this.name = name;
     this.len = len;
     this.hits = 0;
     this.sunk = false;
