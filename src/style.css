@@ -89,3 +89,14 @@ button {
 button:hover {
   background-color: #023e8a;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.player-input {
+  display: flex;
+  flex-direction: column;
+}

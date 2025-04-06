@@ -1,7 +1,32 @@
 import "./style.css";
 
 const Player = require("./player.js");
-const player1 = new Player(true, "Hello");
+const initialHTML = `
+<body>
+  <header>
+    <h1>Battleship Game</h1>
+  </header>
+  <main>
+    <div class="game-container">
+      <form id="player-form">
+        <div class="player-input">
+          <label for="player1-name">Player 1 Name:</label>
+          <input type="text" id="player1-name" name="player1-name" required>
+        </div>
+        <div class="player-input">
+          <label for="player2-name">Player 2 Name:</label>
+          <input type="text" id="player2-name" name="player2-name" required>
+          <div class="toggle-container">
+            <label for="toggle-computer">Play against Computer:</label>
+            <input type="checkbox" id="toggle-computer" name="toggle-computer">
+            </select>
+          </div>
+        </div>
+        <button id="start-game">Start Game</button>
+      </form>
+    </div>
+  </main>
+</body>`;
 const bodyHTML = `  <body>
     <header>
       <h1>Battleship Game</h1>
@@ -18,13 +43,11 @@ const bodyHTML = `  <body>
         </div>
       </div>
       <div class="controls">
-        <button id="start-game">Start Game</button>
-        <button id="reset-game">Reset Game</button>
       </div>
     </main>
   </body>`;
 const body = document.querySelector("body");
-body.innerHTML = bodyHTML;
+body.innerHTML = initialHTML;
 const player1Grid = document.querySelector("#player1-grid");
 const player2Grid = document.querySelector("#player2-grid");
 const startGameButton = document.querySelector("#start-game");
