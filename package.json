@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "watch": "jest --watch --coverage",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "site": "webpack serve --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
