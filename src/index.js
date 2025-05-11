@@ -40,7 +40,7 @@ startGameForm.addEventListener("submit", (e) => {
   const toggleComputer = toggleComputerInput.checked;
   const player1Name = player1NameInput.value;
   if (player2NameInput.value === "") {
-    player2NameInput.value = "Ackbar!";
+    player2NameInput.value = "Ackbar";
   }
   const player2Name = toggleComputer ? "🤖" : player2NameInput.value;
 
