@@ -13,7 +13,7 @@ const initialHTML = `
         </div>
         <div class="player-input">
           <label for="player2-name">Player 2 Name:</label>
-          <input type="text" id="player2-name" name="player2-name" required>
+          <input type="text" id="player2-name" name="player2-name">
           <div class="toggle-container">
             <label for="toggle-computer">Play against Computer:</label>
             <input type="checkbox" id="toggle-computer" name="toggle-computer">
@@ -32,13 +32,18 @@ const startGameButton = document.querySelector("#start-game");
 const startGameForm = document.querySelector("#player-form");
 const player1NameInput = document.querySelector("#player1-name");
 const player2NameInput = document.querySelector("#player2-name");
+
 const toggleComputerInput = document.querySelector("#toggle-computer");
 
 startGameForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const toggleComputer = toggleComputerInput.checked;
   const player1Name = player1NameInput.value;
+  if (player2NameInput.value === "") {
+    player2NameInput.value = "Ackbar!";
+  }
   const player2Name = toggleComputer ? "🤖" : player2NameInput.value;
+
   const gameHTML = `  <body>
     <header>
       <h1>Battleship Game</h1>
