@@ -39,7 +39,7 @@ startGameForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const toggleComputer = toggleComputerInput.checked;
   const player1Name = player1NameInput.value;
-  if (player2NameInput.value === "") {
+  if (player2NameInput.value === "" && !toggleComputer) {
     player2NameInput.value = "Ackbar";
   }
   const player2Name = toggleComputer ? "🤖" : player2NameInput.value;
@@ -53,10 +53,12 @@ startGameForm.addEventListener("submit", (e) => {
         <div class="player-board">
           <h2> Admiral ${player1Name}</h2>
           <div class="grid" id="player1-grid"></div>
+          <table id="player1-table"><th>Available Ships</th></table>
         </div>
         <div class="player-board">
           <h2>Admiral ${player2Name}</h2>
           <div class="grid" id="player2-grid"></div>
+          <table id="player2-table"><th>Available Ships</th></table>
         </div>
       </div>
       <div class="controls">
@@ -93,10 +95,11 @@ function createCells(grid) {
 
 function placeShips(player) {
   let shipArray = [];
-  shipArray.push(new Ship(5, "Carrier", "h"));
-  shipArray.push(new Ship(4, "Battleship", "h"));
-  shipArray.push(new Ship(3, "Cruiser", "h"));
-  shipArray.push(new Ship(3, "Submarine", "h"));
-  shipArray.push(new Ship(2, "Destroyer", "h"));
+  shipArray.push(new Ship(5, "h"));
+  shipArray.push(new Ship(4, "h"));
+  shipArray.push(new Ship(3, "h"));
+  shipArray.push(new Ship(3, "h"));
+  shipArray.push(new Ship(2, "h"));
   player.ships = shipArray;
+  return player.ships;
 }
