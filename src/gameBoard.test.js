@@ -4,10 +4,12 @@ let gb = new gameBoard();
 
 test("Cannot exceed board limt", () => {
   expect(() => {
-    gb.placeShip([8, 0], new Ship(5, "h"));
+    let hship = new Ship(5, "h");
+    gb.placeShip([8, 0], hship);
   }).toThrow(`Cannot exceed board limits`);
   expect(() => {
-    gb.placeShip([0, 8], new Ship(5, "v"));
+    let vship = new Ship(5, "v");
+    gb.placeShip([0, 8], vship);
   }).toThrow(`Cannot exceed board limits`);
 });
 
