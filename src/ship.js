@@ -7,6 +7,18 @@ class Ship {
     if (this.orientation !== "v" && this.orientation !== "h") {
       this.orientation = "h";
     }
+    this.name = (() => {
+      switch (len) {
+        case 2:
+          return "Patrol Boat";
+        case 3:
+          return "Submarine";
+        case 4:
+          return "Battleship";
+        case 5:
+          return "Carrier";
+      }
+    })();
   }
   hit() {
     if (this.sunk == false) {
